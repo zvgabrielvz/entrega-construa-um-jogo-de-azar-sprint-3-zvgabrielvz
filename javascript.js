@@ -4,21 +4,24 @@ choicepedra.addEventListener('click', function clickp(){
     
     restartchoice();
     restartcomput();
+    restarwinner();
     pedra();
     getRandomInt();
     choicecomput();
+    resultgame();
 
 })
-
 
 
 const choicetesoura = document.getElementById('tesoura')
 choicetesoura.addEventListener('click', function clickt(){
     restartchoice();
     restartcomput();
+    restarwinner();
     tesoura();  
     getRandomInt();
     choicecomput();
+    resultgame();
 
 });
 
@@ -26,11 +29,19 @@ const choicepapel = document.getElementById('papel')
 choicepapel.addEventListener('click', function clickpa(){
     restartchoice();
     restartcomput();
+    restarwinner();
     papel();
     getRandomInt();
     choicecomput();
+    resultgame();
    
 });
+
+const restart = document.getElementById('rstbutton')
+restart.addEventListener('click', function(){
+    restartgame();
+
+})
 
 
 function pedra() {
@@ -39,6 +50,7 @@ function pedra() {
     textchoice.setAttribute("id","content-pedra");
     conteudo.appendChild(textchoice);
     textchoice.innerText = 'Voce escolheu pedra!';
+    a = 1;
     
 
 }
@@ -51,6 +63,7 @@ function tesoura() {
     textchoice.setAttribute("id","content-tesoura");
     conteudo.appendChild(textchoice);
     textchoice.innerText = 'Voce escolheu tesoura!';
+    a = 2;
     
 
 }
@@ -63,6 +76,7 @@ function papel() {
     textchoice.setAttribute("id","content-papel");
     conteudo.appendChild(textchoice);
     textchoice.innerText = 'Voce escolheu papel!';
+    a = 3;
     
 
 }
@@ -75,9 +89,8 @@ function getRandomInt(min, max) {
 }
 
 
-
 function choicecomput() {
-    const valor = getRandomInt(1,3);
+    valor = getRandomInt(1,3);
     console.log(valor);
     if(valor === 1){
         
@@ -105,14 +118,6 @@ function choicecomput() {
       
 }
 
-
-const restart = document.getElementById('rstbutton')
-restart.addEventListener('click', function(){
-    restartgame();
-
-})
-
-
 function removetesoura() {
     const removetesoura = document.getElementById('content-tesoura');
     removetesoura.innerHTML = "";
@@ -138,9 +143,46 @@ function restartcomput() {
     conteudo.innerHTML = "";
 }
 
+function restarwinner() {
+    const conteudo = document.getElementById('vencedor');
+    
+    conteudo.innerHTML = "";
+}
+
 function restartgame() {
     restartchoice();
     restartcomput();
+    restarwinner();
+}
+
+//  a = pedra
+//  b = tesoura
+//  c = papel 
+
+function resultgame(){
+
+if((a === 1 && valor ===1) || (a === 2 && valor === 2) ||(a === 3 && valor===3) ){
+    const winner = document.getElementById('vencedor');
+    const winnerr = document.createElement('div');
+    winnerr.setAttribute("id","content-winner");
+    winner.appendChild(winnerr);
+    winnerr.innerText = 'EMPATE!!';
+
+} if((a === 1 && valor ===2) || (a === 2 && valor === 3) ||(a === 3 && valor===1)){
+    const winner = document.getElementById('vencedor');
+    const winnerr = document.createElement('div');
+    winnerr.setAttribute("id","content-winner");
+    winner.appendChild(winnerr);
+    winnerr.innerText = 'VOCE GANHOU!!';
+} if((a === 1 && valor ===3) || (a === 2 && valor === 1) ||(a === 3 && valor===2)){
+    const winner = document.getElementById('vencedor');
+    const winnerr = document.createElement('div');
+    winnerr.setAttribute("id","content-winner");
+    winner.appendChild(winnerr);
+    winnerr.innerText = 'VOCE PERDEU!!';
+
+}
+
 }
     
 

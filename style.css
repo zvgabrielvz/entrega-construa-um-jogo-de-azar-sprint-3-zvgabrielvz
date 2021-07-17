@@ -1,3 +1,12 @@
 img{
     width: 50px;
 }
+
+#content-choice{
+    display: flex;
+    justify-content: space-evenly;
+
+    border: solid;
+    
+
+}
