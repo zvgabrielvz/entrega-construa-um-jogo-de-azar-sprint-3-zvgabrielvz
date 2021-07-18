@@ -11,7 +11,8 @@ body{
 
 h1{
     text-align: center;
-    border: solid;
+    border: solid;text-align: center;
+    margin-top: 30px;
     border-radius: 10px;
     background-color: purple;
    
@@ -77,6 +78,7 @@ img{
 }
 
 @media (min-width : 768px) {
+    
     #content-choice{
         display: flex;
         flex-direction: row;
@@ -97,4 +99,41 @@ img{
 
     
 }
+
+@media (min-width : 1024px) {
+    img{
+        width: 300px;
+    }
+    .titulo{
+        font-size: 30px;
+        width: 900px;
+        margin: auto;
+    }
+
+    #vencedor{
+        font-size: 50px;
+       
+    }
+    #content-choice{
+        max-width: 900px;
+        margin: auto;
+   
+    }
+
+    .subtitulo{
+        font-size: 50px;
+        
+    }
+
+    #choice-text{
+        font-size: 30px;
+    }
+
+    .choice-comput{
+        font-size: 40px;
+    }
+
+    
+}
+
 
