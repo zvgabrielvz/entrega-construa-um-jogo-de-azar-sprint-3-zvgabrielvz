@@ -4,8 +4,8 @@ choicepedra.addEventListener('click', function clickp(){
     restartchoice();
     restartcomput();
     restarwinner();
-    choicepedra.style.border = 'solid 4px slategrey';
-    
+    choicepedra.style.border = 'solid px slategrey';
+    choicepedra.style.borderRadius = '15px';
     choicepedra.addEventListener('mouseenter', entrarpe);
     choicepedra.addEventListener('mouseout', sairpe);
     pedra();
@@ -30,7 +30,7 @@ choicetesoura.addEventListener('click', function clickt(){
     restartcomput();
     restarwinner();
     choicetesoura.style.border = 'solid 4px slategrey';
-   
+    choicetesoura.style.borderRadius = '15px';
     choicetesoura.addEventListener('mouseenter', entrarte);
     choicetesoura.addEventListener('mouseout', sairte);
     tesoura();  
@@ -54,6 +54,7 @@ choicepapel.addEventListener('click', function clickpa(){
     restartcomput();
     restarwinner();
     choicepapel.style.border = 'solid 4px slategrey';
+    choicepapel.style.borderRadius = '15px';
     choicepapel.addEventListener('mouseenter', entrarpa);
     choicepapel.addEventListener('mouseout', sairpa);
     papel();
