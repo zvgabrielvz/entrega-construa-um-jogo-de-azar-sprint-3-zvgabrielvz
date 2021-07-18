@@ -1,12 +1,100 @@
+
+body{
+    font-family: 'Bungee Inline', cursive;
+    background-color: #dedede;
+    background-image: url(./assets/backgame.jpg);
+    color: #fff;
+    
+    
+   
+}
+
+h1{
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+    background-color: purple;
+   
+}
+
+.subtitulo{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -12px;
+
+}
+
+
+
 img{
-    width: 50px;
+    width: 90px;
+    margin: 2px;
+    
 }
 
 #content-choice{
     display: flex;
-    justify-content: space-evenly;
-
-    border: solid;
+    flex-direction: row;
+    justify-content: center;
     
+    
+}
+
+#choice-text{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#random-computer {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#vencedor{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    width: 280px;
+    margin:auto;
+    margin-top: 0px;
 
 }
+
+.reset{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#rstbutton{
+    font-size: 25px;
+    border-radius: 10px;
+    border-color: white;
+    background-color: purple;
+    color: #fff;
+    width: 100px;
+}
+
+@media (min-width : 768px) {
+    #content-choice{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 760px;
+        margin: auto;
+   
+    }
+
+    img{
+        width: 200px;
+    }
+
+    .titulo{
+        width: 760px;
+        margin: auto;
+    }
+
+    
+}
+

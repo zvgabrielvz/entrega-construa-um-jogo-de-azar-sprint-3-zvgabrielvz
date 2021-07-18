@@ -1,10 +1,13 @@
 
 const choicepedra = document.getElementById('pedra')
 choicepedra.addEventListener('click', function clickp(){
-    
     restartchoice();
     restartcomput();
     restarwinner();
+    choicepedra.style.border = 'solid 4px slategrey';
+    
+    choicepedra.addEventListener('mouseenter', entrarpe);
+    choicepedra.addEventListener('mouseout', sairpe);
     pedra();
     getRandomInt();
     choicecomput();
@@ -12,12 +15,24 @@ choicepedra.addEventListener('click', function clickp(){
 
 })
 
+function entrarpe() {
+    choicepedra.style.border = 'solid 4px grey';
+}
+
+function sairpe() {
+    choicepedra.style.border = 'none'
+}
+
 
 const choicetesoura = document.getElementById('tesoura')
 choicetesoura.addEventListener('click', function clickt(){
     restartchoice();
     restartcomput();
     restarwinner();
+    choicetesoura.style.border = 'solid 4px slategrey';
+   
+    choicetesoura.addEventListener('mouseenter', entrarte);
+    choicetesoura.addEventListener('mouseout', sairte);
     tesoura();  
     getRandomInt();
     choicecomput();
@@ -25,17 +40,36 @@ choicetesoura.addEventListener('click', function clickt(){
 
 });
 
+function entrarte() {
+    choicetesoura.style.border = 'solid 4px grey';
+}
+
+function sairte() {
+    choicetesoura.style.border = 'none'
+}
+
 const choicepapel = document.getElementById('papel')
 choicepapel.addEventListener('click', function clickpa(){
     restartchoice();
     restartcomput();
     restarwinner();
+    choicepapel.style.border = 'solid 4px slategrey';
+    choicepapel.addEventListener('mouseenter', entrarpa);
+    choicepapel.addEventListener('mouseout', sairpa);
     papel();
     getRandomInt();
     choicecomput();
     resultgame();
    
 });
+
+function entrarpa() {
+    choicepapel.style.border = 'solid 4px grey';
+}
+
+function sairpa() {
+    choicepapel.style.border = 'none'
+}
 
 const restart = document.getElementById('rstbutton')
 restart.addEventListener('click', function(){
@@ -99,6 +133,9 @@ function choicecomput() {
         compchoice.classList.add('choice-comput');
         computer.appendChild(compchoice);
         compchoice.innerText = 'O computador escolheu Pedra!';
+        const image = document.createElement('img');
+        image.src = './assets/pedras (1).png'
+        document.querySelector('#random-computer').appendChild(image);
     
     } if (valor === 2) {
         const computer = document.getElementById('random-computer');
@@ -106,6 +143,9 @@ function choicecomput() {
         compchoice.classList.add('choice-comput');
         computer.appendChild(compchoice);
         compchoice.innerText = 'O computador escolheu Tesoura!';
+        const image = document.createElement('img');
+        image.src = './assets/tesoura1.png'
+        document.querySelector('#random-computer').appendChild(image);
         
     } if (valor === 3) {
         const computer = document.getElementById('random-computer');
@@ -113,6 +153,9 @@ function choicecomput() {
         compchoice.classList.add('choice-comput');
         computer.appendChild(compchoice);
         compchoice.innerText = 'O computador escolheu Papel!';
+        const image = document.createElement('img');
+        image.src = './assets/papel1.png';
+        document.querySelector('#random-computer').appendChild(image);
      }
      
       
@@ -167,6 +210,9 @@ if((a === 1 && valor ===1) || (a === 2 && valor === 2) ||(a === 3 && valor===3) 
     winnerr.setAttribute("id","content-winner");
     winner.appendChild(winnerr);
     winnerr.innerText = 'EMPATE!!';
+    winnerr.style.border = 'solid 3px white';
+    winnerr.style.borderRadius = '10px';
+    winnerr.style.backgroundColor = 'purple';
 
 } if((a === 1 && valor ===2) || (a === 2 && valor === 3) ||(a === 3 && valor===1)){
     const winner = document.getElementById('vencedor');
@@ -174,12 +220,18 @@ if((a === 1 && valor ===1) || (a === 2 && valor === 2) ||(a === 3 && valor===3) 
     winnerr.setAttribute("id","content-winner");
     winner.appendChild(winnerr);
     winnerr.innerText = 'VOCE GANHOU!!';
+    winnerr.style.border = 'solid 3px white';
+    winnerr.style.borderRadius = '10px';
+    winnerr.style.backgroundColor = 'green';
 } if((a === 1 && valor ===3) || (a === 2 && valor === 1) ||(a === 3 && valor===2)){
     const winner = document.getElementById('vencedor');
     const winnerr = document.createElement('div');
     winnerr.setAttribute("id","content-winner");
     winner.appendChild(winnerr);
     winnerr.innerText = 'VOCE PERDEU!!';
+    winnerr.style.border = 'solid 3px white';
+    winnerr.style.borderRadius = '10px';
+    winnerr.style.backgroundColor = 'red';
 
 }
 
