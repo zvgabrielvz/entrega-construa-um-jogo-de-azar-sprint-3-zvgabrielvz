@@ -126,7 +126,6 @@ function getRandomInt(min, max) {
 
 function choicecomput() {
     valor = getRandomInt(1,3);
-    console.log(valor);
     if(valor === 1){
         
         const computer = document.getElementById('random-computer');
